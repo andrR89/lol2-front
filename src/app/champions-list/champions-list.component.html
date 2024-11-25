@@ -1,0 +1,55 @@
+<mat-toolbar color="primary">
+    <span class="toolbar-title">LoL 2</span>
+    
+    <button mat-raised-button color="warn" (click)="onLogout()">Logout</button>
+  </mat-toolbar>
+  
+  <mat-card class="search-card">
+    <mat-card-title>Pesquisar Campeões</mat-card-title>
+    
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-icon matPrefix>search</mat-icon>
+      <input matInput placeholder="Pesquisar por nome" [(ngModel)]="filter" (input)="onSearch()">
+    </mat-form-field>
+  </mat-card>
+  
+  <mat-table [dataSource]="dataSource">
+    <!-- Coluna de Ícone (Imagem do Campeão) -->
+    <ng-container matColumnDef="icon">
+      <mat-header-cell *matHeaderCellDef> Ícone </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <img [src]="element.images.icon" alt="{{element.name}} Icon" style="width: 40px; height: 40px;">
+      </mat-cell>
+    </ng-container>
+  
+    <!-- Coluna de Nome -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef>Nome</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.name}}</mat-cell>
+    </ng-container>
+  
+    <!-- Coluna de Título -->
+    <ng-container matColumnDef="title">
+      <mat-header-cell *matHeaderCellDef>Título</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.title}}</mat-cell>
+    </ng-container>
+  
+    <!-- Coluna de Ações (Ícone de Detalhes) -->
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef>Ações</mat-header-cell>
+      <mat-cell *matCellDef="let element" class="actions-cell">
+        <button mat-icon-button (click)="onSelectChampion(element.id)">
+          <mat-icon>info</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+  
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  
+  <!-- Paginação -->
+  <mat-paginator [length]="totalRecords" [pageSize]="pageSize" [pageIndex]="pageIndex"
+                 (page)="onPageChange($event)" showFirstLastButtons>
+  </mat-paginator>
+  

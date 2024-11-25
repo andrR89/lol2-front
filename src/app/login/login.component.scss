@@ -1,0 +1,44 @@
+/* Container para centralizar o formulário */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;  /* Full viewport height */
+    background-color: #f5f5f5;  /* Cor de fundo */
+  }
+  
+  .login-form {
+    width: 100%;
+    max-width: 400px;  /* Limitar a largura do formulário */
+  }
+  
+  mat-card {
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  mat-form-field {
+    width: 100%;  /* Garantir que o campo ocupe 100% da largura disponível */
+    margin-bottom: 16px;  /* Espaçamento entre os campos */
+  }
+  
+  button {
+    width: 100%;  /* Fazer o botão ocupar toda a largura */
+    margin-top: 20px;
+  }
+  
+  .register-link {
+    text-align: center;
+    margin-top: 16px;
+  }
+  
+  .register-link a {
+    color: #007bff;  /* Cor do link */
+    text-decoration: none;
+  }
+  
+  .register-link a:hover {
+    text-decoration: underline;
+  }
+  

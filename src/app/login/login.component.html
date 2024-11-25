@@ -1,0 +1,24 @@
+<div class="login-container">
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()" class="login-form">
+      <mat-card>
+        <mat-card-title>Lol 2 </mat-card-title>
+  
+        <mat-form-field class="full-width">
+          <input matInput placeholder="E-mail" formControlName="username" type="email" required>
+        </mat-form-field>
+  
+        <mat-form-field class="full-width">
+          <input matInput placeholder="Senha" formControlName="password" type="password" required>
+        </mat-form-field>
+  
+        <button mat-raised-button color="primary" type="submit" [disabled]="loginForm.invalid">Login</button>
+  
+        <!-- Link para a tela de registro -->
+        <div class="register-link">
+            <p>Não tem uma conta? <a routerLink="/register">Cadastre-se aqui</a></p>
+          </div>
+          
+      </mat-card>
+    </form>
+  </div>
+  

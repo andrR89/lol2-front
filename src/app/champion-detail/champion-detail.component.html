@@ -1,0 +1,52 @@
+<mat-card>
+    <mat-card-title>
+      <button mat-icon-button (click)="onBack()">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+      {{champion?.name}}
+    </mat-card-title>
+    <mat-card-content>
+      <p>{{champion?.title}}</p>
+      <p>{{champion?.blurb}}</p>
+      <div>
+        <h3>Skins:</h3>
+        <div class="skin-grid" *ngIf="skins.length > 0">
+          <div *ngFor="let skin of skins" class="skin-item">
+            <img 
+              [src]="skin.splash" 
+              alt="{{skin.name}}" 
+              (click)="openSkinModal(skin)"
+              class="skin-image"/>
+            <p>{{skin.name}}</p>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  
+  <!-- CSS para ajustar a grid de skins e o layout do botão de voltar -->
+  <style>
+    .skin-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
+    }
+    .skin-item {
+      text-align: center;
+    }
+    .skin-image {
+      width: 100%;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+  
+    mat-card-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    mat-card-title button {
+      margin-right: 10px;
+    }
+  </style>
+  

@@ -1,0 +1,37 @@
+/* Para centralizar o conteúdo da toolbar */
+.toolbar-title {
+    flex: 1;
+  }
+  
+  /* Container do input de pesquisa para garantir que ele ocupe o espaço necessário */
+  .search-container {
+    display: flex;
+    justify-content: flex-start;
+    flex: 1;
+  }
+  
+  /* Estilo do card de pesquisa */
+  .search-card {
+    margin-top: 20px;
+    padding: 20px;
+  }
+  
+  /* Garantir que o botão de logout fique alinhado à direita */
+  button {
+    margin-left: auto;
+  }
+  
+  /* Adiciona margem nos campos de pesquisa para separação */
+  mat-form-field {
+    margin-right: 10px;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+
+  .actions-cell {
+    display: flex;
+    justify-content: center;  /* Centraliza horizontalmente */
+    align-items: center;      /* Centraliza verticalmente */
+  }

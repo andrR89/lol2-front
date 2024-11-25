@@ -1,0 +1,57 @@
+/* Container para centralizar o formulário */
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;  /* Full viewport height */
+    background-color: #f5f5f5;  /* Cor de fundo */
+  }
+  
+  .register-form {
+    width: 100%;
+    max-width: 400px;  /* Limitar a largura do formulário */
+  }
+  
+  mat-card {
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  mat-form-field {
+    width: 100%;  /* Garantir que o campo ocupe 100% da largura disponível */
+    margin-bottom: 16px;  /* Espaçamento entre os campos */
+  }
+  
+  button {
+    width: 100%;  /* Fazer o botão ocupar toda a largura */
+    margin-top: 20px;
+  }
+  
+  /* Estilo para o link de login */
+  .login-link {
+    margin-top: 16px;
+    text-align: center;
+  }
+  
+  .login-link a {
+    text-decoration: none;
+    color: #1976d2;  /* Cor do link (pode ajustar conforme seu tema) */
+  }
+  
+  .login-link a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Estilo para o Snackbar de sucesso */
+.snackbar-success {
+    background-color: #4caf50;  /* Cor verde para sucesso */
+    color: white;
+  }
+  
+  /* Estilo para o Snackbar de erro */
+  .snackbar-error {
+    background-color: #f44336;  /* Cor vermelha para erro */
+    color: white;
+  }
+  
